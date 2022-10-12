@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Truck class
 class Truck
 {
 public:
@@ -15,11 +16,6 @@ public:
     Truck()
     {
         regNo = "nullptr";
-        // driver = nullptr;
-        // petrol = NULL;
-        // regNo = nullptr;
-        // fullMileage = NULL;
-        // emptyMileage = NULL;
     }
     // overloaded concs
     Truck(string drvr, double ptrl, string reg, int full, int empty)

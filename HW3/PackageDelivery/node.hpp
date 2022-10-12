@@ -2,6 +2,8 @@
 #include "truck.hpp"
 #include <iostream>
 using namespace std;
+
+// BSTNode class 
 class BSTNode
 {
 public:
