@@ -156,6 +156,7 @@ void unloadTrucks(BSTNode *root)
     {
         unloadTrucks(root->left);
     }
+
     // open txt file for writing/appending
     ofstream MyFile("Trip.txt", ios_base::app);
 
