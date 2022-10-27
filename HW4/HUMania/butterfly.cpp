@@ -9,7 +9,26 @@ void Butterfly::draw()
 void Butterfly::fly()
 {
     // you have to do flying animations here
-    moverRect.x += 5;
+    moverRect.x += 10;
+
+    if (downwardsDirected)
+    {
+
+        moverRect.y += 6;
+        if (moverRect.y > 550)
+        {
+            downwardsDirected = false;
+        }
+    }
+    else
+    {
+        moverRect.y -= 6;
+        if (moverRect.y <= 0)
+        {
+            downwardsDirected = true;
+        }
+    }
+
     if (moverRect.x >= 1000)
     {
         moverRect.x = 0;
@@ -25,6 +44,8 @@ Butterfly::Butterfly(int x, int y)
     moverRect = {x, y, 50, 50};
     // initialize with state 0
     state = 0;
+    // move down
+    downwardsDirected = true;
 }
 void Butterfly::animate()
 {
@@ -48,4 +69,3 @@ void Butterfly::animate()
         break;
     }
 }
-

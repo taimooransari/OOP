@@ -22,5 +22,4 @@ class HUMania{
     
     void drawObjects(); 
     void createObject(int, int);
-    
 };

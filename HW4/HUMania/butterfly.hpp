@@ -5,6 +5,7 @@ class Butterfly
 
     SDL_Rect srcRect, moverRect;
     int state;
+    bool downwardsDirected;
 
 public:
     void draw();

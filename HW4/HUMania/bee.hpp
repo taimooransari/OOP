@@ -16,4 +16,5 @@ public:
     Bee(int x, int y);
 
     void animate();
+    bool destroy();
 };

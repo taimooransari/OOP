@@ -10,10 +10,6 @@ void Bee::fly()
 {
     // you have to do flying animations here
     moverRect.x += 5;
-    if (moverRect.x >= 1000)
-    {
-        moverRect.x = 0;
-    }
 }
 
 Bee::Bee(int x, int y)
@@ -49,4 +45,7 @@ void Bee::animate()
     }
 }
 
-
+bool Bee::destroy()
+{
+    return moverRect.x >= 1000;
+}
