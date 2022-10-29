@@ -23,7 +23,14 @@ void HUMania::drawObjects()
     for (int i = 0; i < bees.size(); i++)
     {
         bees[i]->draw();
-        bees[i]->fly();
+        if (bees[i]->getHoverState())
+        {
+            bees[i]->hoverFrame();
+        }
+        else
+        {
+            bees[i]->fly();
+        }
         bees[i]->animate();
 
         if (bees[i]->destroy())
@@ -40,7 +47,6 @@ void HUMania::createObject(int x, int y)
 {
     // std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
     int rnd = rand() % 3;
-    cout << rnd << endl;
     if (rnd == 0)
     {
         Bee *b = new Bee(x, y);

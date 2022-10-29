@@ -1,6 +1,7 @@
 #include "bee.hpp"
 // Bee implementation will go here.
-
+#include <iostream>
+using namespace std;
 void Bee::draw()
 {
     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
@@ -9,7 +10,35 @@ void Bee::draw()
 void Bee::fly()
 {
     // you have to do flying animations here
-    moverRect.x += 5;
+    int check = rand() % 100;
+
+    if (check < 5)
+    {
+        isHovering = true;
+        frameHoverLeft = 10;
+    }
+    else
+    {
+        moverRect.x += 8;
+    }
+}
+
+void Bee::hoverFrame()
+{
+    if (frameHoverLeft < 1)
+    {
+        isHovering = false;
+        cout << "hover over" << endl;
+    }
+    else
+    {
+        frameHoverLeft -= 1;
+    }
+}
+
+bool Bee::getHoverState()
+{
+    return isHovering;
 }
 
 Bee::Bee(int x, int y)

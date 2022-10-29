@@ -5,6 +5,8 @@ class Bee
 
     SDL_Rect srcRect, moverRect;
     int state;
+    bool isHovering = false;
+    int frameHoverLeft = 10;
 
 public:
     void draw();
@@ -17,4 +19,6 @@ public:
 
     void animate();
     bool destroy();
+    void hoverFrame();
+    bool getHoverState();
 };
