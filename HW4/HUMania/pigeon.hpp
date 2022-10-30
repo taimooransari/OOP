@@ -14,6 +14,5 @@ public:
     // you may add other overloaded constructors here...
 
     Pigeon(int x, int y);
-
     void animate();
 };

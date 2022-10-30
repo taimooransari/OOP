@@ -9,7 +9,11 @@ void Pigeon::draw()
 void Pigeon::fly()
 {
     // you have to do flying animations here
-    moverRect.x += 5;
+
+    // move pigeon left to right
+    moverRect.x += 10;
+
+    // if it moves past the screen from right, it reappears from left.
     if (moverRect.x >= 1000)
     {
         moverRect.x = 0;
@@ -28,6 +32,9 @@ Pigeon::Pigeon(int x, int y)
 }
 void Pigeon::animate()
 {
+
+    // animation state with up, down and midway wings of pigeon.
+    // chnging srcRect of each state depending on the current state.
     switch (state)
     {
     case 0:

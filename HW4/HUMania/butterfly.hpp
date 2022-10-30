@@ -15,6 +15,5 @@ public:
     // you may add other overloaded constructors here...
 
     Butterfly(int x, int y);
-
     void animate();
 };

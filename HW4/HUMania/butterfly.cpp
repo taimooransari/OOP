@@ -9,12 +9,14 @@ void Butterfly::draw()
 void Butterfly::fly()
 {
     // you have to do flying animations here
-    moverRect.x += 10;
 
+    // move the butterfly towards the right
+    moverRect.x += 15;
+    // y-direction condition for butterfly, if top or end of screen is reached it changes direction.
     if (downwardsDirected)
     {
 
-        moverRect.y += 6;
+        moverRect.y += 9;
         if (moverRect.y > 550)
         {
             downwardsDirected = false;
@@ -22,13 +24,13 @@ void Butterfly::fly()
     }
     else
     {
-        moverRect.y -= 6;
+        moverRect.y -= 9;
         if (moverRect.y <= 0)
         {
             downwardsDirected = true;
         }
     }
-
+    // if it moves past the screen from right, it reappears from left.
     if (moverRect.x >= 1000)
     {
         moverRect.x = 0;
@@ -49,6 +51,8 @@ Butterfly::Butterfly(int x, int y)
 }
 void Butterfly::animate()
 {
+    // animation state with up, down and midway wings of butterfly.
+    // chnging srcRect of each state depending on the current state.
     switch (state)
     {
     case 0:

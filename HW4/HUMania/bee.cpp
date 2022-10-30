@@ -10,8 +10,10 @@ void Bee::draw()
 void Bee::fly()
 {
     // you have to do flying animations here
-    int check = rand() % 100;
 
+    // Integer that determines where the bee will hover or fly.
+    int check = rand() % 100;
+    // 5% probability of hover state activating. Else the bee just moves/flys.
     if (check < 5)
     {
         isHovering = true;
@@ -19,16 +21,17 @@ void Bee::fly()
     }
     else
     {
-        moverRect.x += 8;
+        moverRect.x += 10;
     }
 }
 
+// Function controlling the hover frames count.
+//  Since the bee hovers for 10 frames, this manages updating the frame count and changing hover to fly state after 10 frames.
 void Bee::hoverFrame()
 {
     if (frameHoverLeft < 1)
     {
         isHovering = false;
-        cout << "hover over" << endl;
     }
     else
     {
@@ -36,6 +39,7 @@ void Bee::hoverFrame()
     }
 }
 
+// Getter Function to get the boolean value of hovering state of the bee.
 bool Bee::getHoverState()
 {
     return isHovering;
@@ -53,6 +57,9 @@ Bee::Bee(int x, int y)
 }
 void Bee::animate()
 {
+
+    // animation state with up, down and midway wings of bee.
+    // chnging srcRect of each state depending on the current state.
     switch (state)
     {
     case 0:
@@ -74,6 +81,8 @@ void Bee::animate()
     }
 }
 
+// This function returns true if the bee has moved past the screen from the right side.
+//  This boolean return value serves as a condition to determine wheteher we delete this bee from rendering or not.
 bool Bee::destroy()
 {
     return moverRect.x >= 1000;
