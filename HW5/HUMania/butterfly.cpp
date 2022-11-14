@@ -1,23 +1,17 @@
 #include "butterfly.hpp"
-// pigeon implementation will go here.
-
-// in project implementation this draw function should only be in superclass
-// void Pigeon::draw(){
-//     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
-// }
 
 // fly() is overrided from the superclass
 void Butterfly::fly()
 {
-    //
     SDL_Rect mov = Unit::getMover();
     mov.x += 15;
     mov.y += 9 * direction;
+    // butterfly reappears from left when it passes screen from right.
     if (mov.x > 1000)
     {
         mov.x = 0;
     }
-
+    // it shifts y-direction when reaches either the top or bottom opf the screen
     if (mov.y <= 0 || mov.y >= 550)
     {
         direction *= -1;

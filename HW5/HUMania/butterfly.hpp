@@ -1,16 +1,16 @@
 #pragma once
-#include<SDL.h>
+#include <SDL.h>
 #include "drawing.hpp"
 #include "unit.hpp"
-class Butterfly: public Unit{
+class Butterfly : public Unit
+{
+    // direction determines if it moves downwards or upwards
+    int direction = 1;
 
-    // SDL_Rect srcRect, moverRect;
-    int direction =1;
 public:
-    // add the fly function here as well.
-    // void draw();
+    // overridden fly function
     void fly();
+    // default and overloaded constructors
     Butterfly();
-    Butterfly(int , int); 
-    // may add other overloaded constructors here... 
+    Butterfly(int, int);
 };

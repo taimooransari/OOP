@@ -7,24 +7,27 @@
 #include <vector>
 #include <list>
 using namespace std;
-
+// Class ObjectCreator which is used to randomly return a Unit object.
 class ObjectCreator
 {
 public:
     Unit *getObject(int, int);
 };
 
+// Class HUMania
 class HUMania
 {
-
-    // Right now we're creating one pigeon, just for practice. for details follow the guidlines
-    //  Pigeon p1;
-    list <Unit *> animals;
+    // List of Unit*
+    list<Unit *> animals;
+    // ObjectCreator object to call it's function getObjects.
     ObjectCreator *o;
-    // Create your list here
+
 public:
+    // draw the objects/units
     void drawObjects();
+    // function that calls the objectCreator function
     void createObject(int, int);
 
     // create destructor which deletes all dynamic objects
+    void ~HUMania();
 };

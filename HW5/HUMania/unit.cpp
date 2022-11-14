@@ -7,13 +7,7 @@ void Unit::draw()
     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
 }
 
-// fly() is overrided from the superclass
-void Unit::fly()
-{
-    //
-    moverRect.x += 5;
-}
-
+// Unit overloaded constructor
 Unit::Unit(SDL_Rect src, int x, int y, int st)
 {
     // src coorinates from assets.png file, they have been found using spritecow.com
@@ -24,28 +18,36 @@ Unit::Unit(SDL_Rect src, int x, int y, int st)
     state = st;
 }
 
+// Function to get srcRect of Unit
 SDL_Rect Unit::getSrc()
 {
     return srcRect;
 };
+
+// Function to get moverRect of Unit
 SDL_Rect Unit::getMover()
 {
     return moverRect;
 };
 
+// Function to set srcRect of Unit
 void Unit::setSrc(SDL_Rect s)
 {
     srcRect = s;
 };
+
+// Function to set moverRect of Unit
 void Unit::setMover(SDL_Rect m)
 {
     moverRect = m;
 };
+
+// Funtion to animate the wings up and down states by changing srcRect according to int state.
 void Unit::animate()
 {
     switch (state)
     {
-        // bee
+        // bee states
     case 0:
         state = 1;
         srcRect = {234, 630, 163, 162};
@@ -61,7 +63,7 @@ void Unit::animate()
         srcRect = {63, 619, 151, 166};
         break;
 
-        // pigreon
+        // pigreon states
 
     case 3:
         state = 4;
@@ -77,7 +79,7 @@ void Unit::animate()
         state = 3;
         srcRect = {7, 88, 160, 103};
         break;
-    // butterfly
+    // butterfly states
     case 6:
         state = 7;
         srcRect = {257, 182, 192, 214};

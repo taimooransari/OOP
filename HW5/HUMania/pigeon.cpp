@@ -2,16 +2,13 @@
 // pigeon implementation will go here.
 
 // in project implementation this draw function should only be in superclass
-// void Pigeon::draw(){
-//     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
-// }
 
 // fly() is overrided from the superclass
 void Pigeon::fly()
 {
-    //
     SDL_Rect mov = Unit::getMover();
     mov.x += 10;
+    // If the pigeon crosses screen from right it reappears from left.
     if (mov.x > 1000)
     {
         mov.x = 0;

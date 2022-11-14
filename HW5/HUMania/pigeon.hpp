@@ -5,14 +5,11 @@
 class Pigeon : public Unit
 {
 
-    // SDL_Rect srcRect, moverRect;
-
 
 public:
-    // add the fly function here as well.
-    // void draw();
+    // overridden fly function
     void fly();
+    // default and overloaded constructors
     Pigeon();
     Pigeon(int, int);
-    // may add other overloaded constructors here...
 };

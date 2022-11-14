@@ -2,15 +2,10 @@
 #include <stdlib.h>
 // Bee implementation will go here.
 
-// in project implementation this draw function should only be in superclass
-// void Bee::draw(){
-//     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
-// }
-
 // fly() is overrided from the superclass
 void Bee::fly()
 {
-    //
+    // condition block checking if the bee is hovering or flying
     if (isHovering)
     {
         frames--;
