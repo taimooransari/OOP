@@ -61,19 +61,16 @@ Unit *ObjectCreator::getObject(int x, int y)
     if (rnd == 0)
     {
         Unit *u = new Pigeon(x, y);
-        cout << "p ---->" << u << endl;
         return u;
     }
     else if (rnd == 1)
     {
         Unit *u = new Bee(x, y);
-        cout << "p ---->" << u << endl;
         return u;
     }
     else
     {
         Unit *u = new Butterfly(x, y);
-        cout << "p ---->" << u << endl;
         return u;
     }
 }
