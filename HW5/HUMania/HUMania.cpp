@@ -31,7 +31,7 @@ void HUMania::drawObjects()
     // for (Unit *animal : animals)
     {
         Unit *animal = *i;
-        cout << animal << endl;
+        // cout << animal << endl;
         // cout << "----" << endl;
         animal->draw();
         animal->fly();
@@ -44,11 +44,8 @@ void HUMania::drawObjects()
             if (animal->getMover().x > 1000)
             {
                 // code to delete from vector
-                cout << 1 << endl;
-                animals.erase(i);
-                cout << 2 << endl;
                 delete animal;
-                cout << "-----------------  " << animal<<endl;
+                animals.erase(i);
             }
         }
     }
@@ -58,22 +55,25 @@ void HUMania::drawObjects()
 Unit *ObjectCreator::getObject(int x, int y)
 {
 
-    // int rnd = rand() % 3;
-    int rnd = 1;
+    int rnd = rand() % 3;
+    // int rnd = 1;
     // Unit *u;
     if (rnd == 0)
     {
         Unit *u = new Pigeon(x, y);
+        cout << "p ---->" << u << endl;
         return u;
     }
     else if (rnd == 1)
     {
         Unit *u = new Bee(x, y);
+        cout << "p ---->" << u << endl;
         return u;
     }
     else
     {
         Unit *u = new Butterfly(x, y);
+        cout << "p ---->" << u << endl;
         return u;
     }
 }
