@@ -98,3 +98,8 @@ void Unit::animate()
         break;
     }
 };
+
+void Unit::fly()
+{
+    moverRect.x += 10;
+}

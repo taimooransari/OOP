@@ -29,32 +29,22 @@ void HUMania::drawObjects()
     }
 }
 
-// get object function that randomly returns one of the pigeon, bee, butterfly
-Unit *ObjectCreator::getObject(int x, int y)
-{
-    // randomly get an integer 0, 1, 2 and create and return an animal.
-    int rnd = rand() % 3;
-
-    if (rnd == 0)
-    {
-        Unit *u = new Pigeon(x, y);
-        return u;
-    }
-    else if (rnd == 1)
-    {
-        Unit *u = new Bee(x, y);
-        return u;
-    }
-    else
-    {
-        Unit *u = new Butterfly(x, y);
-        return u;
-    }
-}
-
 // creates new objects
 void HUMania::createObject(int x, int y)
 {
     Unit *u = o->getObject(x, y);
     animals.push_back(u);
+}
+
+// Deconstructor, memory being releasedƒ
+HUMania::~HUMania()
+{
+
+    for (list<Unit *>::iterator i = animals.begin(); i != animals.end(); i++)
+    {
+
+        Unit *animal = *i;
+        delete animal;
+        animals.erase(i);
+    }
 }

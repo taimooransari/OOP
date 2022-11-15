@@ -1,18 +1,12 @@
 #pragma once
 #include <SDL.h>
-#include "pigeon.hpp"
-#include "bee.hpp"
-#include "butterfly.hpp"
+// #include "pigeon.hpp"
+// #include "bee.hpp"
+// #include "butterfly.hpp"
+#include "objectCreator.hpp"
 #include "unit.hpp"
-#include <vector>
 #include <list>
 using namespace std;
-// Class ObjectCreator which is used to randomly return a Unit object.
-class ObjectCreator
-{
-public:
-    Unit *getObject(int, int);
-};
 
 // Class HUMania
 class HUMania
@@ -29,5 +23,5 @@ public:
     void createObject(int, int);
 
     // create destructor which deletes all dynamic objects
-    void ~HUMania();
+    ~HUMania();
 };

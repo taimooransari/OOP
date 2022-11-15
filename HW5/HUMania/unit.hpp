@@ -11,7 +11,7 @@ class Unit
 public:
     // add the fly function here as well.
     void draw();
-    virtual void fly()=0;
+    virtual void fly();
     SDL_Rect getSrc();
     SDL_Rect getMover();
     void setSrc(SDL_Rect);
